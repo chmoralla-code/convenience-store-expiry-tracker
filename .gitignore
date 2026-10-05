@@ -1,0 +1,28 @@
+# Node / Expo
+node_modules/
+.expo/
+.expo-shared/
+dist/
+web-build/
+
+# Native builds
+*.apk
+*.aab
+android/
+ios/
+
+# Env + secrets (never commit real keys)
+.env
+.env.*
+*.key
+*.pem
+supabase/.temp/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local agent notes + screenshots
+.hormachuelos/
