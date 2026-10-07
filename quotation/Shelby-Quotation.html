@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shelby Quotation</title>
+<style>
+  :root {
+    --ink: #1f2a44;
+    --muted: #6b7280;
+    --line: #1f2a44;
+    --soft-line: #e5e7eb;
+    --highlight: #f6e9c8;
+    --green: #2f9e6f;
+    --page: #eef0f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--ink);
+    display: flex;
+    justify-content: center;
+    padding: 48px 16px;
+  }
+  .card {
+    width: 760px;
+    max-width: 100%;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(31, 42, 68, 0.12);
+    padding: 40px 40px 36px;
+  }
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2.5px solid var(--line);
+    padding-bottom: 12px;
+  }
+  h1 {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 800;
+    font-size: 34px;
+    letter-spacing: 1px;
+  }
+  .title { display: flex; align-items: center; gap: 18px; }
+  .logo { height: 64px; width: auto; }
+  .no {
+    font-family: Consolas, "Courier New", monospace;
+    color: var(--muted);
+    font-size: 15px;
+  }
+  table { width: 100%; border-collapse: separate; border-spacing: 0 6px; margin-top: 18px; }
+  td { padding: 8px 14px; vertical-align: top; font-size: 18px; line-height: 1.4; }
+  td.k {
+    width: 180px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: #4b5563;
+    padding-top: 11px;
+  }
+  tr.hl td { background: var(--highlight); }
+  tr.hl td:first-child { border-radius: 6px 0 0 6px; color: var(--ink); font-weight: 700; }
+  tr.hl td:last-child { border-radius: 0 6px 6px 0; }
+  .foot {
+    position: relative;
+    margin-top: 40px;
+    border-top: 1.5px solid var(--soft-line);
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .foot .k {
+    font-family: Consolas, "Courier New", monospace;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+  }
+  .total { font-family: "Segoe UI", Arial, sans-serif; font-weight: 900; font-size: 46px; }
+  .stamp {
+    position: absolute;
+    right: 20px;
+    top: -24px;
+    transform: rotate(-9deg);
+    border: 3px solid var(--green);
+    color: var(--green);
+    border-radius: 8px;
+    padding: 4px 14px;
+    font-family: Consolas, "Courier New", monospace;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 3px;
+    background: #fff;
+  }
+  .note { margin-top: 20px; font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  .signs { display: none; }
+  /* Printing: long bond paper, 8.5 x 13 in, one page */
+  @page { size: 8.5in 13in; margin: 0.5in; }
+  @media print {
+    html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { background: #fff; padding: 0; display: block; }
+    .card { width: 7.5in; box-shadow: none; border-radius: 0; padding: 0.4in 0 0; margin: 0 auto; }
+    h1 { font-size: 40px; }
+    .logo { height: 76px; }
+    td { font-size: 17px; padding: 11px 14px; }
+    td.k { width: 170px; font-size: 13px; padding-top: 14px; }
+    table { margin-top: 28px; border-spacing: 0 9px; }
+    .foot { margin-top: 64px; padding-top: 30px; }
+    .total { font-size: 54px; }
+    .stamp { font-size: 24px; top: -30px; }
+    .note { margin-top: 34px; font-size: 14px; }
+    .signs { display: flex; gap: 0.6in; margin-top: 1.0in; }
+    .sign { flex: 1; font-size: 14px; font-weight: 600; color: var(--ink); }
+    .sign span { font-weight: 400; font-size: 12px; color: var(--muted); }
+    .sign-line { border-top: 1.5px solid var(--ink); margin-bottom: 8px; }
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="head">
+      <div class="title">
+        <img class="logo" src="shelby-logo.png" alt="Shelby">
+        <h1>QUOTATION</h1>
+      </div>
+      <span class="no">No. 2026-015</span>
+    </div>
+
+    <table>
+      <tr><td class="k">CLIENT</td><td>Shelby Convenience Store</td></tr>
+      <tr><td class="k">PROJECT</td><td>Store Inventory &amp; Expiry Tracker App (Android)</td></tr>
+      <tr><td class="k">SCOPE</td><td>Stock tracking, expiry alerts, barcode scanning, daily reminders, sales/waste reports, in-app updates</td></tr>
+      <tr><td class="k">TELEGRAM</td><td>Telegram integration: expiry &amp; low-stock alerts, daily data backup and restore</td></tr>
+      <tr><td class="k">BRANDING</td><td>Custom branding with the store's own name, logo and colors</td></tr>
+      <tr><td class="k">LICENSE</td><td>Lifetime use · no monthly fees</td></tr>
+      <tr><td class="k">TIMELINE</td><td>1 week (setup, product loading &amp; staff training)</td></tr>
+      <tr class="hl"><td class="k">LIMITATIONS</td><td>Android only · 5 rounds of revisions · Play Store publishing not included</td></tr>
+      <tr class="hl"><td class="k">SUPPORT</td><td>6 months free bug fixes after launch (sent through in-app updates)</td></tr>
+    </table>
+
+    <div class="foot">
+      <span class="stamp">VALIDATED</span>
+      <span class="k">TOTAL</span>
+      <span class="total">₱35,000</span>
+    </div>
+
+    <div class="note">Valid for 30 days from issue. 50% down payment to start, 50% upon turnover.</div>
+    <div class="signs">
+      <div class="sign"><div class="sign-line"></div>Prepared by<br><span>Name, signature &amp; date</span></div>
+      <div class="sign"><div class="sign-line"></div>Conforme — Shelby Convenience Store<br><span>Name, signature &amp; date</span></div>
+    </div>
+  </div>
+</body>
+</html>

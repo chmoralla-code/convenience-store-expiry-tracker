@@ -39,3 +39,6 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Release signing key (keep private, back it up!)
+credentials/

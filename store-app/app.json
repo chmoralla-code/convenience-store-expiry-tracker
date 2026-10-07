@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Expiry Tracker",
+    "name": "Shelby",
     "slug": "expiry-tracker",
-    "version": "1.0.0",
+    "version": "1.1.4",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -11,14 +11,44 @@
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#FFFFFF",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+      },
+      "package": "com.shelby.expirytracker",
+      "versionCode": 6,
+      "permissions": [
+        "android.permission.REQUEST_INSTALL_PACKAGES"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-sqlite",
+      "expo-sharing",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Shelby uses the camera to scan product barcodes.",
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/android-icon-monochrome.png",
+          "color": "#2f62c4"
+        }
+      ],
+      "expo-background-task",
+      "./plugins/withReleaseSigning"
+    ],
+    "extra": {
+      "updates": {
+        "repo": "chmoralla-code/convenience-store-expiry-tracker"
+      }
     }
   }
 }

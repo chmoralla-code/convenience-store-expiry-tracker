@@ -1,26 +1,49 @@
-# Convenience Store — Expiry Tracker
+# Shelby — Convenience Store Inventory
 
-Phone app (Expo) that tracks food items near expiration and sends a daily Telegram alert.
+Android app (Expo) for tracking a convenience store's stock and expiry dates.
+Everything is stored **on the phone** (SQLite) and works without internet.
 
-## Parts
+## What it does
 
-- `store-app/` — Expo app: add items with expiry dates, color-coded list (Expired / Critical 0–3 days / Warning 4–7 days / Fresh)
-- `supabase/migrations/` — shared `products` table + daily schedule
-- `supabase/functions/expiry-check/` — daily job that pings Telegram with near-expiry items
+- **Expiry** tab — every delivery with its expiry date, colour-coded:
+  Expired / 0–3 days / 4–7 days. Throw out expired stock in one tap.
+- **Stock** tab — all products with how many are left, low-stock and
+  out-of-stock filters, search, and barcode scanning.
+- **Product page** — Receive (delivery in, with expiry date), Remove (sold,
+  damaged, expired, used in store, returned to supplier), Count (fix stock to
+  what is really on the shelf) and Edit. Stock going out is taken from the
+  batch that expires first.
+- **History** tab — every stock change with its reason and time.
+- **More** tab — this month's sales and waste, stock value at cost and selling
+  price, reorder list (shareable), daily reminder notification, Telegram alert,
+  and backup / restore.
 
-## Run the app
+## Run it for development
 
-1. Copy env and fill it in:
-   - `cp store-app/.env.example store-app/.env`
-2. Install and start:
-   - `cd store-app && npm install && npx expo start`
-   - Press `a` for the Android emulator
+```bash
+cd store-app
+npm install
+npx expo start
+```
 
-## Telegram alerts
+Press `a` to open it in Expo Go on the Android emulator. The daily reminder
+only works in the installed APK — Expo Go doesn't support notifications.
 
-Set these secrets on the `expiry-check` function in Supabase:
+## Build the APK
 
-- `TELEGRAM_BOT_TOKEN` — from @BotFather
-- `TELEGRAM_CHAT_ID` — your staff group chat id
+```bash
+cd store-app
+npx expo prebuild --platform android
+cd android
+./gradlew assembleRelease
+```
 
-Runs daily at 8 AM (Asia/Manila).
+The APK is written to `store-app/android/app/build/outputs/apk/release/`.
+On Windows, build from a short path such as `C:\sb` (or enable Windows long
+paths): the project's full path is too long for the native build.
+
+## Backups
+
+Data lives only on the phone. Use **More → Save backup** regularly and keep the
+file in Google Drive or Telegram. **More → Restore** loads a backup file and
+replaces everything on the phone.
